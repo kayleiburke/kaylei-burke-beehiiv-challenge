@@ -28,7 +28,8 @@ end
 group :test do
   gem "database_cleaner-active_record"
   gem "database_cleaner-redis"
-  gem "factory_bot"
+  gem "factory_bot_rails"
+  gem "faker"
   gem "rack-test"
   gem "rspec-rails", "~> 4.0.1"
   gem "webmock", "~> 3.5.0"
