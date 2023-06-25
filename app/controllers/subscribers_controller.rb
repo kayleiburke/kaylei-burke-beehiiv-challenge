@@ -16,10 +16,22 @@ class SubscribersController < ApplicationController
   end
 
   def create
-    render json: {message: "Subscriber created successfully"}, formats: :json, status: :created
+    subscriber = Subscriber.new(subscriber_params)
+
+    if subscriber.save
+      render json: { message: "Subscriber created successfully" }, formats: :json, status: :created
+    else
+      render json: { errors: subscriber.errors.full_messages }, formats: :json, status: :unprocessable_entity
+    end
   end
 
   def update
     render json: {message: "Subscriber updated successfully"}, formats: :json, status: :ok
+  end
+
+  private
+
+  def subscriber_params
+    params.require(:subscriber).permit(:name, :email)
   end
 end
