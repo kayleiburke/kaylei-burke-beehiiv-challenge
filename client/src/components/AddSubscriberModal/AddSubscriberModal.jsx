@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from 'prop-types'
 import Button, { SecondaryButton } from '../Button'
 import Modal, { ModalBody, ModalFooter } from '../Modal'
@@ -41,6 +41,15 @@ const AddSubscriberModal = (props) => {
           setIsSaving(false)
         })
   }
+
+  useEffect(() => {
+    // Reset the form fields when the modal opens
+    if (isOpen) {
+      setEmail('')
+      setName('')
+      setErrors([])
+    }
+  }, [isOpen])
 
   return (
     <Modal modalTitle="Add Subscriber" showModal={isOpen} onCloseModal={onClose}>
