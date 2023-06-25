@@ -39,4 +39,34 @@ RSpec.describe Subscriber, type: :model do
       expect(subscriber1.errors[:email]).to include('cannot contain whitespace')
     end
   end
+
+  describe 'custom methods' do
+    describe '.find_by_email' do
+      before { subscriber1.save }
+
+      it 'finds a subscriber by case-insensitive email' do
+        found_subscriber = Subscriber.find_by_email('John@example.com')
+        expect(found_subscriber).to eq(subscriber1)
+      end
+
+      it 'returns nil when no subscriber matches the email' do
+        found_subscriber = Subscriber.find_by_email('nonexistent@example.com')
+        expect(found_subscriber).to be_nil
+      end
+    end
+
+    describe '.where_email' do
+      before { subscriber1.save }
+
+      it 'returns subscribers with case-insensitive matching email' do
+        matching_subscribers = Subscriber.where_email('John@example.com')
+        expect(matching_subscribers).to include(subscriber1)
+      end
+
+      it 'returns an empty array when no subscribers match the email' do
+        matching_subscribers = Subscriber.where_email('nonexistent@example.com')
+        expect(matching_subscribers).to be_empty
+      end
+    end
+  end
 end

@@ -6,6 +6,13 @@ class Subscriber < ApplicationRecord
             format: { with: URI::MailTo::EMAIL_REGEXP, message: 'is not a valid email address' }
   validate :email_does_not_contain_whitespace
 
+  def self.find_by_email(email)
+    where('LOWER(email) = ?', email.downcase).first
+  end
+  def self.where_email(email)
+    where('LOWER(email) = ?', email.downcase)
+  end
+
   private
 
   def email_does_not_contain_whitespace
