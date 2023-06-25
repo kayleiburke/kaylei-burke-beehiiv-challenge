@@ -26,5 +26,17 @@ RSpec.describe Subscriber, type: :model do
       expect(subscriber2).not_to be_valid
       expect(subscriber2.errors[:name]).to include("can't be blank")
     end
+
+    it 'fails when email is not a valid email address' do
+      subscriber1.email = 'invalid_email'
+      expect(subscriber1).not_to be_valid
+      expect(subscriber1.errors[:email]).to include('is not a valid email address')
+    end
+
+    it 'fails when email contains whitespace' do
+      subscriber1.email = 'john @example.com'
+      expect(subscriber1).not_to be_valid
+      expect(subscriber1.errors[:email]).to include('cannot contain whitespace')
+    end
   end
 end
