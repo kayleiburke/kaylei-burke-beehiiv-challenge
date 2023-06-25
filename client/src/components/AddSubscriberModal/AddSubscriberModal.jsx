@@ -10,6 +10,7 @@ const AddSubscriberModal = (props) => {
   const [isSaving, setIsSaving] = useState(false)
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
+  const [errors, setErrors] = useState([]) // State variable for errors
 
   const handleChange = (e) => {
     const { target: { name, value }} = e
@@ -28,22 +29,32 @@ const AddSubscriberModal = (props) => {
 
     setIsSaving(true)
     createSubscriber(payload)
-    .then(() => {
-      onSuccess()
-    })
-    .catch((payload) => {
-      const error = payload?.response?.data?.message || 'Something went wrong'
-      console.error(error)
-    })
-    .finally(() => {
-      setIsSaving(false)
-    })
+        .then(() => {
+          onSuccess()
+        })
+        .catch((error) => {
+          const errorMessages = error?.response?.data?.errors || ['Something went wrong']
+          setErrors(errorMessages)
+          console.error(errorMessages)
+        })
+        .finally(() => {
+          setIsSaving(false)
+        })
   }
 
   return (
     <Modal modalTitle="Add Subscriber" showModal={isOpen} onCloseModal={onClose}>
       <>
         <ModalBody>
+          {/* Display errors in a message box */}
+          {errors.length > 0 && (
+              <div className="bg-red-100 text-red-500 p-4 mb-4">
+                {errors.map((error, index) => (
+                    <p key={index}>{error}</p>
+                ))}
+              </div>
+          )}
+
           <form className="my-4 text-blueGray-500 text-lg leading-relaxed">
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
@@ -96,7 +107,7 @@ const AddSubscriberModal = (props) => {
 }
 
 AddSubscriberModal.propTypes = {
-  isOpen: PropTypes.bool, 
+  isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   onSuccess: PropTypes.func
 }
