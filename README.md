@@ -110,4 +110,5 @@ If any errors occur, they will be displayed within the modal.   Below is example
 
 ## Tests
 All tests are passing:
+
 <img width="579" alt="Screen Shot 2023-06-28 at 12 36 14 PM" src="https://github.com/beehiiv/challenge/assets/4614468/9acd03ca-7924-4c95-9472-96644ea2314b">
