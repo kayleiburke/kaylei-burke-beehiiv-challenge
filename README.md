@@ -66,7 +66,7 @@ Below is my submission for the Beehiiv coding challenge, meeting the technical r
 https://beehiiv-challenge-kaylei-burke-e3444692c205.herokuapp.com
 
 ### Login Credentials
-When you first access the site, you are prompted for a username and password:
+When you first access the site, you are prompted for a username and password. These login credentials are:
 
 **username:** `username`
 **password:** `password`
