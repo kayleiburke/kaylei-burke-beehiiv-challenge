@@ -71,46 +71,41 @@ When you first access the site, you are prompted for a username and password. Th
 **username:** `username`
 **password:** `password`
 
-<img width="1068" alt="Screen Shot 2023-06-26 at 1 52 42 PM" src="https://github.com/beehiiv/challenge/assets/4614468/19e2fbd6-43db-4969-af7a-4d72ccdb54e2">
+<img width="60%" alt="Screenshot 2026-06-13 at 8 39 35 PM" src="https://github.com/user-attachments/assets/928bd7be-9583-41e5-8e17-c8dd0730b699" />
 
 These values are currently stored as config variables in Heroku, and can be updated as needed:
 
-![249020501-72285d8d-4cee-4f59-9814-61a00aa0581d (3)](https://github.com/beehiiv/challenge/assets/4614468/83207e91-3b65-40fa-a6ed-746190771d87)
+<img width="60%" alt="Screenshot 2026-06-13 at 8 42 21 PM" src="https://github.com/user-attachments/assets/c88a0c8b-872e-4be3-9d62-be2fdb7c9429" />
 
 ### Main Page
 Subscribers are displayed in ascending order based on the `created_at` timestamp (oldest records first), with 10 subscribers per page:
 
-<img width="1074" alt="Screen Shot 2023-06-26 at 1 19 28 PM" src="https://github.com/beehiiv/challenge/assets/4614468/4473dcf3-6979-462e-8643-75d1f773b9f2">
+<img width="60%" alt="Screenshot 2026-06-13 at 8 48 31 PM" src="https://github.com/user-attachments/assets/1aff8fcd-3891-47db-8484-1c90b5d84677" />
 
 #### Adding a Subscriber
 Subscribers can be added by clicking the **Add Subscriber** button and filling out the modal fields:
-<img width="946" alt="249015272-3326197d-51e1-42cf-bc18-14fbfe58fdaa" src="https://github.com/beehiiv/challenge/assets/4614468/83f20a7f-7548-4d55-9f11-382f1c5bc5e9">
+<img width="60%" alt="Screenshot 2026-06-13 at 8 49 29 PM" src="https://github.com/user-attachments/assets/a87779b6-69b4-4976-9112-e5eb5ec69cf3" />
 
 There is certain criteria that must be met in order for a subscriber to be saved:
 - Email must be present, valid, and contain no whitespaces
 - Email must not already be used by another subscriber (case insensitive)
 
 ##### Example Errors:
-<img width="1022" alt="249015153-d2a2f032-c85b-4070-bd60-360e04a19e39" src="https://github.com/beehiiv/challenge/assets/4614468/7ffc0e33-5a61-43af-8ccb-ad82263ba301">
-
 If multiple errors occur, they are displayed on separate lines within the message box:
 
-<img width="1032" alt="249021839-b7c98293-bd99-4f48-97d8-605c89ef8a0e" src="https://github.com/beehiiv/challenge/assets/4614468/c3bac4bc-4b5c-4745-92aa-e67af0f507ea">
+<img width="60%" alt="Screenshot 2026-06-13 at 8 50 35 PM" src="https://github.com/user-attachments/assets/3cd058cf-367d-4c97-ad99-97056697bc54" />
 
 ##### Example Success:
 Subscribers that are added successfully are added at the end of the list, and are assigned a default status of Active:
 
-<img width="1107" alt="Screen Shot 2023-06-26 at 11 20 59 PM 2" src="https://github.com/beehiiv/challenge/assets/4614468/de586fb3-98c2-4812-90cb-974ec0c80572">
+<img width="60%" alt="Screenshot 2026-06-13 at 8 48 31 PM" src="https://github.com/user-attachments/assets/17ab1cd7-b44a-49a4-ac7f-21c7b7694075" />
 
 #### Updating Subscription Status
 Subscription status can be updated by clicking the **Subscribe** or **Unsubscribe** links:
-<img width="1042" alt="249022222-c032dbe8-78c6-4535-b51c-da8a5560202a" src="https://github.com/beehiiv/challenge/assets/4614468/94dbb55d-f2a0-4fec-9298-a4e442dde37f">
-
-If any errors occur, they will be displayed within the modal.   Below is example (note that I manually triggered this error by temporarily adding a bug in the `update` method of the `subscribers` Rails controller):
-
-<img width="1069" alt="Screen Shot 2023-06-26 at 3 25 21 PM" src="https://github.com/beehiiv/challenge/assets/4614468/77a0ce37-0852-4c26-ad10-848946d95879">
+<img width="60%" alt="Screenshot 2026-06-13 at 8 53 51 PM" src="https://github.com/user-attachments/assets/c801fc05-623d-4580-8773-77a80bab24ad" />
 
 ### Tests
 All tests are passing:
 
-<img width="579" alt="Screen Shot 2023-06-28 at 12 36 14 PM" src="https://github.com/beehiiv/challenge/assets/4614468/9acd03ca-7924-4c95-9472-96644ea2314b">
+<img width="50%" alt="Screenshot 2026-06-13 at 9 05 39 PM" src="https://github.com/user-attachments/assets/7ae0c640-2133-47c1-99a5-0bc5a0569541" />
+
